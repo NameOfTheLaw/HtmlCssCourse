@@ -7,18 +7,18 @@
   <body>
     <header class="main-header container">
       <nav class="main-navigation">
-        <ul class="left-nav-panel">
+        <ul class="nav-panel">
           <li>
             <a href="#">Информация</a>
           </li>
           <li>
             <a href="#">Фото и видео</a>
           </li>
-        </ul>
-        <a class="header-logo">
-          <img src="img/city-of-sedona.jpg" width="138" height="70" alt="City of sedona">
-        </a>
-        <ul class="right-nav-panel">
+          <li>
+            <a class="header-logo">
+              <img src="img/city-of-sedona.jpg" alt="City of sedona">
+            </a>
+          </li>
           <li>
             <a href="#">Карта штата</a>
           </li>
@@ -30,7 +30,14 @@
     </header>
     <main class="container">
       <div class="index-logo">
-        <img src="img/index-logo.jpg" width="1200" height="570" alt="Welcome to Sedona">
+        <img src="img/index-logo.jpg" alt="Welcome to Sedona">
+        <!--
+          В данном случае элемент оформления повляется в разметке.
+          Не знаю способов реализации на CSS.
+        -->
+        <div class="index-logo-mask">
+            <img src="img/index-logo-mask.jpg">
+        </div>
       </div>
       <div class="features-preambul">
         <b>Седона - небольшой городок в Аризоне,<br>
@@ -38,7 +45,7 @@
         <p>Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</p>
       </div>
       <div class="features-line">
-        <div class="feature-main">
+        <div class="main-feature">
           <h2>Настоящий<br>
             городок</h2>
           <span class="feature-number">№1</span>
@@ -54,34 +61,28 @@
             <img src="recomendation-place.jpg" alt="Motel">
           </div>
           <b>Жилье</b>
-          <p>
-            Рекомендуем пожить в настоящем мотеле, как в кино!
-          </p>
+          <p>Рекомендуем пожить в настоящем мотеле, как в кино!</p>
         </div>
         <div class="recomendation">
           <div class="recomedation-img">
             <img src="recomendation-food.jpg" alt="Food">
           </div>
           <b>Еда</b>
-          <p>
-            Всегда заказывайте фирменный бургер, вы не разочаруетесь!
-          </p>
+          <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
         </div>
         <div class="recomendation">
           <div class="recomedation-img">
             <img src="recomendation-souvenirs.jpg" alt="Souvenirs">
           </div>
           <b>Сувениры</b>
-          <p>
-            Не только китайского, но и местного производства!
-          </p>
+          <p>Не только китайского, но и местного производства!</p>
         </div>
       </div>
       <div class="features-line">
         <div class="feature-image">
           <img src="img/feature-2.jpg"alt="">
         </div>
-        <div class="feature-main">
+        <div class="main-feature">
           <h2>Там есть<br>
             мост Дьявола</h2>
           <span class="feature-number">№2</span>
@@ -89,72 +90,82 @@
         </div>
       </div>
       <div class="features-line">
-        <div class="feature-secondary">
+        <div class="feature">
           <h2>Небольшая<br>
             площадь</h2>
           <span class="feature-number">№3</span>
           <p>Все достопримечательности находятся очень близко</p>
         </div>
-        <div class="feature-secondary">
+        <div class="feature">
           <h2>Красивая<br>
             дорога</h2>
           <span class="feature-number">№4</span>
           <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
         </div>
-        <div class="feature-secondary">
+        <div class="feature">
           <h2>Мало<br>
             туристов</h2>
           <span class="feature-number">№5</span>
           <p>Большинство едет в Гранд Каньон и толпится там</p>
         </div>
       </div>
+      <section class="search">
+        <div class="search-preambul">
+          <b>Заинтересовались?</b>
+          <p>Укажите предлагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+          <div class="search-form-title">
+            <h2>Поиск гостиницы в Седоне</h2>
+          </div>
+        </div>
+        <div class="search-map">
+          <div class="search-form-container">
+            <form class="search-form" action="/search" method="get">
+              <div class="input-container">
+                <label for="in-date">Дата заезда:</label>
+                <input type="date" id="in-date" name="in-date" value="2016-04-24">
+              </div>
+              <div class="input-container">
+                <label for="out-date">Дата выезда:</label>
+                <input type="date" id="out-date" name="out-date" value="2016-07-04">
+              </div>
+              <div class="input-container-short">
+                <label>Взрослые:</label>
+                <div class="count-input-container">
+                  <button class="minus-btn" type="button" id="rem-adult"></button>
+                  <input class="count-input" type="text" id="adults-count" name="adults-count" value="2" disabled>
+                  <button class="plus-btn" type="button" id="add-adult"></button>
+                </div>
+              </div>
+              <div class="input-container-short">
+                <label>Дети:</label>
+                <div class="count-input-container">
+                  <button class="minus-btn" type="button" id="rem-children"></button>
+                  <input class="count-input" type="text" id="children-count" name="children-count" value="0" disabled>
+                  <button class="plus-btn" type="button" id="add-children"></button>
+                </div>
+              </div>
+              <div class="input-container">
+                <input class="submit-btn" type="submit" value="Найти">
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer class="main-footer">
-      <div class="search-preambul">
-        <b>Заинтересовались?</b>
-        <p>Укажите предлагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-        <div class="search-form-title">
-          Поиск гостиницы в Седоне
-        </div>
+    <footer class="main-footer container">
+      <div class="footer-tags">
+        #visitsedona
       </div>
-      <div class="footer-body-container">
-        <div class="search-form-container">
-          <form action="/search" method="get">
-            <label for="in-date">Дата заезда:</label>
-            <input type="date" id="in-date" name="in-date" value="2016-04-24">
-            <label for="out-date">Дата выезда:</label>
-            <input type="date" id="out-date" name="out-date" value="2016-07-04">
-            <label>Взрослые:</label>
-            <div class="count-input-container">
-              <button class="minus-btn" type="button"></button>
-              <input class="count-input" type="text" id="adults-count" name="adults-count" value="2" disabled>
-              <button class="plus-btn" type="button"></button>
-            </div>
-            <label>Дети:</label>
-            <div class="count-input-container">
-              <button class="minus-btn" type="button"></button>
-              <input class="count-input" type="text" id="children-count" name="children-count" value="0" disabled>
-              <button class="plus-btn" type="button"></button>
-            </div>
-            <input class="submit-btn" type="submit" value="Найти">
-          </form>
-        </div>
-        <div class="footer-links">
-          <div class="footer-tags">
-            #visitsedona
-          </div>
-          <div class="footer-socials">
-            <a class="social-btn social-btn-vk" href="#">Вконтакте</a>
-            <a class="social-btn social-btn-fb" href="#">Фейсбук</a>
-            <a class="social-btn social-btn-inst" href="#">Инстаграм</a>
-          </div>
-          <div class="footer-copyright">
-            Website by
-            <a href="#">
-              <img src="by-htmlacademy.jpg" alt="htmlacademy.ru">
-            </a>
-          </div>
-        </div>
+      <div class="footer-socials">
+        <a class="social-btn social-btn-vk" href="#">Вконтакте</a>
+        <a class="social-btn social-btn-fb" href="#">Фейсбук</a>
+        <a class="social-btn social-btn-inst" href="#">Инстаграм</a>
+      </div>
+      <div class="footer-copyright">
+        Website by
+        <a href="#">
+          <img src="by-htmlacademy.jpg" alt="htmlacademy.ru">
+        </a>
       </div>
     </footer>
   </body>
