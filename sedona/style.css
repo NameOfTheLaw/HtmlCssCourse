@@ -1,0 +1,204 @@
+@font-face {
+  font-family: 'ptSans';
+  src:  url('assets/fonts/ptsans.woff2') format('woff2'),
+        url('assets/fonts/ptsans.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ptSans';
+  src:  url('assets/fonts/ptsansbold.woff2') format('woff2'),
+        url('assets/fonts/ptsansbold.woff') format('woff');
+  font-weight: bold;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: 'ptSans', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container {
+  width: 768px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.main-header {
+}
+
+.main-header .main-navigation {
+}
+
+.main-header .main-navigation ul {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-header .main-navigation ul li {
+  width: 20%;
+}
+
+.main-header .main-navigation ul li:nth-child(1) {
+  float: left;
+  margin-left: 6%;
+  text-align: left;
+}
+.main-header .main-navigation ul li:nth-child(2) {
+  float: left;
+  text-align: left;
+}
+.main-header .main-navigation ul li:nth-child(3) {
+  float: left;
+  margin-left: 8%;
+  text-align: right;
+}
+.main-header .main-navigation ul li:nth-child(4) {
+  float: right;
+  margin-right: 6%;
+  text-align: right;
+}
+
+.main-header .main-navigation ul li a {
+  display: block;
+  padding: 18px 0;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.main-header .header-logo {
+  position: absolute;
+  top: 0;
+  width: inherit;
+  height: 0;
+  text-align: center;
+}
+
+main {
+}
+
+main .promo-intro {
+  min-height: 212px;
+  /* 512px (image-height) + 60px (text margin-top) = 572px */
+  padding-top: 572px;
+  /* абзац выпадает */
+  border-bottom: 1px solid transparent;
+  background-color: #fff;
+  background-image: url("assets/images/promo-image.png");
+  background-repeat: no-repeat;
+}
+
+main .promo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+main .promo-list li {
+  float:left;
+  width: 33.3%;
+}
+
+main .promo-list li .feature,
+main .promo-list li .recomendation {
+  width: 100%;
+}
+
+main .promo-list li .feature {
+  /* абзац и заголовок выпадают */
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  min-height: 256px;
+}
+
+main .promo-list li .recomendation {
+  min-height: 330px;
+}
+
+main .promo-list li.main-item {
+  width: 100%;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+main .promo-list li.main-item .feature {
+  width: 33.3%;
+}
+
+main .promo-list li.main-item.main-item-first {
+  background-image: url("assets/images/small-city-sedona.png");
+}
+
+main .promo-list li.main-item.main-item-second {
+  background-image: url("assets/images/devil-bridge.png");
+}
+
+main .search-container {
+}
+
+main .search-container .search-preambul{
+  min-height: 290px;
+}
+
+main .search-container .search-map {
+  min-height: 595px;
+  background-color: #fff;
+  background-image: url("assets/images/search-map.png");
+}
+
+main .search-container .search-form {
+  width: 568px;
+  min-height: 395px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid gray;
+}
+
+.main-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.main-footer .footer-tags,
+.main-footer .footer-socials,
+.main-footer .footer-copyright {
+  float: left;
+  width: 33.3%;
+  min-height: 120px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* границы для сеток */
+/*
+.container {
+  border: 1px solid red;
+}
+
+.promo-intro,
+.promo-list,
+.search-container {
+  border: 1px solid gold;
+}
+
+.promo-list li,
+.search-preambul,
+.search-form,
+.main-footer .container > div {
+  border: 1px solid green;
+  margin-left: -2px;
+}
+*/

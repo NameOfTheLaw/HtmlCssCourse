@@ -3,21 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Sedona</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <header class="main-header container">
       <nav class="main-navigation">
-        <ul class="nav-panel">
+        <ul class="nav-panel clearfix">
           <li>
             <a href="#">Информация</a>
           </li>
           <li>
             <a href="#">Фото и видео</a>
-          </li>
-          <li>
-            <a class="header-logo">
-              <img src="img/city-of-sedona.jpg" alt="City of sedona">
-            </a>
           </li>
           <li>
             <a href="#">Карта штата</a>
@@ -27,71 +23,49 @@
           </li>
         </ul>
       </nav>
+      <div class="header-logo">
+        <img src="assets/images/header-logo.png" alt="City of sedona">
+      </div>
     </header>
     <main class="container">
-      <div class="index-logo">
-        <img src="img/index-logo.jpg" alt="Welcome to Sedona">
-        <!--
-          В данном случае элемент оформления повляется в разметке.
-          Не знаю способов реализации на CSS.
-        -->
-        <div class="index-logo-mask">
-            <img src="img/index-logo-mask.jpg">
-        </div>
-      </div>
-      <div class="features-preambul">
+      <div class="promo-intro">
         <b>Седона - небольшой городок в Аризоне,<br>
           заслуживающий большего!</b>
         <p>Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</p>
       </div>
-      <ol class="features-list">
-        <li class="main-item">
-          <div class="main-feature-container">
-            <div class="main-feature">
-              <h2>Настоящий<br>
-                городок</h2>
-              <span class="feature-number">№1</span>
-              <p>Седона - не аттракцион для туристов, там течет своя жизнь</p>
-            </div>
-            <div class="feature-image">
-              <img src="img/feature-1.jpg"alt="">
-            </div>
-          </div>
-          <div class="recomendations">
-            <div class="recomendation-item">
-              <div class="recomedation-img">
-                <img src="recomendation-place.jpg" alt="Motel">
-              </div>
-              <b>Жилье</b>
-              <p>Рекомендуем пожить в настоящем мотеле, как в кино!</p>
-            </div>
-            <div class="recomendation-item">
-              <div class="recomedation-img">
-                <img src="recomendation-food.jpg" alt="Food">
-              </div>
-              <b>Еда</b>
-              <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
-            </div>
-            <div class="recomendation-item">
-              <div class="recomedation-img">
-                <img src="recomendation-souvenirs.jpg" alt="Souvenirs">
-              </div>
-              <b>Сувениры</b>
-              <p>Не только китайского, но и местного производства!</p>
-            </div>
+      <ol class="promo-list clearfix">
+        <li class="main-item main-item-first">
+          <div class="feature">
+            <h2>Настоящий<br>
+              городок</h2>
+            <span class="feature-number">№1</span>
+            <p>Седона - не аттракцион для туристов, там течет своя жизнь</p>
           </div>
         </li>
-        <li class="main-item">
-          <div class="main-feature-container">
-            <div class="feature-image">
-              <img src="img/feature-2.jpg"alt="">
-            </div>
-            <div class="main-feature">
-              <h2>Там есть<br>
-                мост Дьявола</h2>
-              <span class="feature-number">№2</span>
-              <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
-            </div>
+        <li class="secondary-item">
+          <div class="recomendation recomendation-rent">
+            <b>Жилье</b>
+            <p>Рекомендуем пожить в настоящем мотеле, как в кино!</p>
+          </div>
+        </li>
+        <li class="secondary-item">
+          <div class="recomendation recomendation-food">
+            <b>Еда</b>
+            <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+          </div>
+        </li>
+        <li class="secondary-item">
+          <div class="recomendation recomendation-souv">
+            <b>Сувениры</b>
+            <p>Не только китайского, но и местного производства!</p>
+          </div>
+        </li>
+        <li class="main-item main-item-second">
+          <div class="feature">
+            <h2>Там есть<br>
+              мост Дьявола</h2>
+            <span class="feature-number">№2</span>
+            <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
           </div>
         </li>
         <li>
@@ -119,50 +93,36 @@
           </div>
         </li>
       </ol>
-      <section class="search">
+      <section class="search-container">
         <div class="search-preambul">
-          <b>Заинтересовались?</b>
+          <h2>Заинтересовались?</h2>
           <p>Укажите предлагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-          <div class="search-form-title">
-            <h2>Поиск гостиницы в Седоне</h2>
-          </div>
+          <a href="#" class="main-search-btn">Поиск гостиницы в Седоне</a>
         </div>
         <div class="search-map">
-          <div class="search-form-container">
-            <form class="search-form" action="/search" method="get">
-              <div class="input-container">
-                <label for="in-date">Дата заезда:</label>
-                <input type="date" id="in-date" name="in-date" value="2016-04-24">
+          <form class="search-form" action="/search" method="get">
+              <label for="in-date">Дата заезда:</label>
+              <input type="date" id="in-date" name="in-date" value="2016-04-24">
+              <label for="out-date">Дата выезда:</label>
+              <input type="date" id="out-date" name="out-date" value="2016-07-04">
+              <label>Взрослые:</label>
+              <div class="count-input-container">
+                <button class="minus-btn" type="button" id="rem-adult"></button>
+                <input class="count-input" type="text" id="adults-count" name="adults-count" value="2" disabled>
+                <button class="plus-btn" type="button" id="add-adult"></button>
               </div>
-              <div class="input-container">
-                <label for="out-date">Дата выезда:</label>
-                <input type="date" id="out-date" name="out-date" value="2016-07-04">
+              <label>Дети:</label>
+              <div class="count-input-container">
+                <button class="minus-btn" type="button" id="rem-children"></button>
+                <input class="count-input" type="text" id="children-count" name="children-count" value="0" disabled>
+                <button class="plus-btn" type="button" id="add-children"></button>
               </div>
-              <div class="input-container-short">
-                <label>Взрослые:</label>
-                <div class="count-input-container">
-                  <button class="minus-btn" type="button" id="rem-adult"></button>
-                  <input class="count-input" type="text" id="adults-count" name="adults-count" value="2" disabled>
-                  <button class="plus-btn" type="button" id="add-adult"></button>
-                </div>
-              </div>
-              <div class="input-container-short">
-                <label>Дети:</label>
-                <div class="count-input-container">
-                  <button class="minus-btn" type="button" id="rem-children"></button>
-                  <input class="count-input" type="text" id="children-count" name="children-count" value="0" disabled>
-                  <button class="plus-btn" type="button" id="add-children"></button>
-                </div>
-              </div>
-              <div class="input-container">
-                <input class="submit-btn" type="submit" value="Найти">
-              </div>
-            </form>
-          </div>
+              <input class="submit-btn" type="submit" value="Найти">
+          </form>
         </div>
       </section>
     </main>
-    <footer class="main-footer container">
+    <footer class="main-footer container clearfix">
       <div class="footer-tags">
         #visitsedona
       </div>
@@ -174,7 +134,7 @@
       <div class="footer-copyright">
         Website by
         <a href="#">
-          <img src="by-htmlacademy.jpg" alt="htmlacademy.ru">
+          <img src="assets/images/by-htmlacademy.png" alt="htmlacademy.ru">
         </a>
       </div>
     </footer>
