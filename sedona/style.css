@@ -28,11 +28,16 @@ body {
 
 .container {
   width: 768px;
+  /*
+  min-width: 768px;
+  max-width: 1200px;
+  */
   padding: 0 10px;
   margin: 0 auto;
 }
 
 .main-header {
+  position: relative;
 }
 
 .main-header .main-navigation {
@@ -80,7 +85,7 @@ body {
 .main-header .header-logo {
   position: absolute;
   top: 0;
-  width: inherit;
+  width: 100%;
   height: 0;
   text-align: center;
 }
@@ -89,14 +94,18 @@ main {
 }
 
 main .promo-intro {
-  min-height: 212px;
-  /* 512px (image-height) + 60px (text margin-top) = 572px */
-  padding-top: 572px;
+  min-height: 724px;
   /* абзац выпадает */
   border-bottom: 1px solid transparent;
-  background-color: #fff;
-  background-image: url("assets/images/promo-image.png");
-  background-repeat: no-repeat;
+}
+
+main .promo-intro .promo-img {
+  height: 512px;
+  margin-bottom: 60px;
+  background: url("assets/images/promo-text.png") center top no-repeat,
+    url("assets/images/promo-bottom-mask.png") center top no-repeat,
+    url("assets/images/promo-mountains.png") center top no-repeat;
+  background-size: auto 512px, 100% 512px, cover;
 }
 
 main .promo-list {
@@ -105,44 +114,45 @@ main .promo-list {
   padding: 0;
 }
 
-main .promo-list li {
+main .promo-list .promo-item {
   float:left;
-  width: 33.3%;
+  width: calc(100%/3);
 }
 
-main .promo-list li .feature,
-main .promo-list li .recomendation {
-  width: 100%;
-}
-
-main .promo-list li .feature {
+main .promo-list .promo-item {
   /* абзац и заголовок выпадают */
+  /*
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
+  */
+}
+
+main .promo-list .promo-item.promo-main-feature,
+main .promo-list .promo-item.promo-feature {
   min-height: 256px;
 }
 
-main .promo-list li .recomendation {
+main .promo-list .promo-item.promo-recomendation {
   min-height: 330px;
 }
 
-main .promo-list li.main-item {
-  width: 100%;
-  background-color: #fff;
-  background-repeat: no-repeat;
-  background-position: right center;
+main .promo-list .promo-item.promo-main-feature {
+  width: calc(100%/3);
+  padding-right: calc(100%*2/3);
+  padding-left: 0;
+  background-color: red;
+  background: url("assets/images/small-city-sedona.png") no-repeat;
+  background-size: calc(100%*2/3) auto;
+  background-position: right top;
 }
 
-main .promo-list li.main-item .feature {
-  width: 33.3%;
-}
-
-main .promo-list li.main-item.main-item-first {
-  background-image: url("assets/images/small-city-sedona.png");
-}
-
-main .promo-list li.main-item.main-item-second {
-  background-image: url("assets/images/devil-bridge.png");
+main .promo-list .promo-item.promo-main-feature ~ .promo-item.promo-main-feature {
+  width: calc(100%/3);
+  padding-right: 0;
+  padding-left: calc(100%*2/3);
+  background: url("assets/images/devil-bridge.png") no-repeat;
+  background-size: calc(100%*2/3) auto;
+  background-position: left top;
 }
 
 main .search-container {
@@ -156,6 +166,7 @@ main .search-container .search-map {
   min-height: 595px;
   background-color: #fff;
   background-image: url("assets/images/search-map.png");
+  background-size: 100% auto;
 }
 
 main .search-container .search-form {
@@ -163,7 +174,6 @@ main .search-container .search-form {
   min-height: 395px;
   margin: 0 auto;
   background-color: #fff;
-  border: 1px solid gray;
 }
 
 .main-footer {
@@ -177,7 +187,7 @@ main .search-container .search-form {
 .main-footer .footer-socials,
 .main-footer .footer-copyright {
   float: left;
-  width: 33.3%;
+  width: calc(100%/3);
   min-height: 120px;
   background-color: rgba(255, 255, 255, 0.9);
 }
