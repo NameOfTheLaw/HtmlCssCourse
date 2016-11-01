@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
     <meta charset="utf-8">
     <title>Sedona</title>
+    <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -24,7 +25,7 @@
         </ul>
       </nav>
       <div class="header-logo">
-        <img src="assets/images/header-logo.png" alt="City of Sedona">
+        <img src="assets/images/header-logo.png" width="137" height="70" alt="City of Sedona">
       </div>
     </header>
     <main class="container">
@@ -36,88 +37,92 @@
       </div>
       <ol class="promo-list clearfix">
         <li class="promo-item promo-main-feature">
-          <h2>Настоящий<br>
-            городок</h2>
-          <span class="feature-number">№1</span>
+          <h2>Настоящий<br> городок</h2>
+          <span class="feature-number">- №1 -</span>
           <p>Седона - не аттракцион для туристов, там течет своя жизнь</p>
         </li>
         <li class="promo-item promo-recomendation promo-recomendation-rent">
           <b>Жилье</b>
-          <p>Рекомендуем пожить в настоящем мотеле, как в кино!</p>
+          <p>Рекомендуем пожить<br> в настоящем мотеле,<br> как в кино!</p>
         </li>
         <li class="promo-item promo-recomendation promo-recomendation-food">
           <b>Еда</b>
-          <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+          <p>Всегда заказывайте фирменный бургер,<br> вы не разочаруетесь!</p>
         </li>
         <li class="promo-item promo-recomendation promo-recomendation-souv">
           <b>Сувениры</b>
-          <p>Не только китайского, но и местного производства!</p>
+          <p>Не только китайского, <br>но и местного производства!</p>
         </li>
         <li class="promo-item promo-main-feature">
           <h2>Там есть<br>
             мост Дьявола</h2>
-          <span class="feature-number">№2</span>
+          <span class="feature-number">- №2 -</span>
           <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
         </li>
         <li class="promo-item promo-feature">
           <h2>Небольшая<br>
             площадь</h2>
-          <span class="feature-number">№3</span>
-          <p>Все достопримечательности находятся очень близко</p>
+          <span class="feature-number">- №3 -</span>
+          <p>Все достопримеча&shy;тельности находятся очень близко</p>
         </li>
         <li class="promo-item promo-feature">
           <h2>Красивая<br>
             дорога</h2>
-          <span class="feature-number">№4</span>
-          <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+          <span class="feature-number">- №4 -</span>
+          <p>Ехать в Седону из <br>Лас-Вегаса совсем <br>не скучно!</p>
         </li>
         <li class="promo-item promo-feature">
           <h2>Мало<br>
             туристов</h2>
-          <span class="feature-number">№5</span>
-          <p>Большинство едет в Гранд Каньон и толпится там</p>
+          <span class="feature-number">- №5 -</span>
+          <p>Большинство едет в Гранд Каньон и<br> толпится там</p>
         </li>
       </ol>
       <section class="search-container">
         <div class="search-preambul">
           <h2>Заинтересовались?</h2>
-          <p>Укажите предлагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-          <a href="#" class="main-search-btn">Поиск гостиницы в Седоне</a>
+          <p>Укажите предлагаемые даты поездки,<br>
+            и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+          <a class="main-search-btn" href="#">Поиск гостиницы в Седоне</a>
         </div>
         <div class="search-map">
-          <form class="search-form" action="/search" method="get">
+          <form class="search-form clearfix" action="/search" method="get">
+            <div class="date-input-container">
               <label for="in-date">Дата заезда:</label>
-              <input type="date" id="in-date" name="in-date" value="2016-04-24">
+              <input type="text" id="in-date" name="in-date" value="24 апреля 2016">
+            </div>
+            <div class="date-input-container">
               <label for="out-date">Дата выезда:</label>
-              <input type="date" id="out-date" name="out-date" value="2016-07-04">
+              <input type="text" id="out-date" name="out-date" value="4 июля 2016">
+            </div>
+            <div class="count-input-container">
               <label>Взрослые:</label>
-              <div class="count-input-container">
-                <button class="minus-btn" type="button" id="rem-adult"></button>
-                <input class="count-input" type="text" id="adults-count" name="adults-count" value="2" disabled>
-                <button class="plus-btn" type="button" id="add-adult"></button>
-              </div>
+              <button class="count-btn plus-btn" type="button" id="add-adult"></button>
+              <input class="count-input" type="text" id="adults-count" name="adults-count" value="2" disabled>
+              <button class="count-btn minus-btn" type="button" id="rem-adult"></button>
+            </div>
+            <div class="count-input-container">
               <label>Дети:</label>
-              <div class="count-input-container">
-                <button class="minus-btn" type="button" id="rem-children"></button>
-                <input class="count-input" type="text" id="children-count" name="children-count" value="0" disabled>
-                <button class="plus-btn" type="button" id="add-children"></button>
-              </div>
-              <input class="submit-btn" type="submit" value="Найти">
+              <button class="count-btn plus-btn" type="button" id="add-children"></button>
+              <input class="count-input" type="text" id="children-count" name="children-count" value="0" disabled>
+              <button class="count-btn minus-btn" type="button" id="rem-children"></button>
+            </div>
+            <input class="submit-btn" type="submit" value="Найти">
           </form>
         </div>
       </section>
     </main>
     <footer class="main-footer container clearfix">
       <div class="footer-tags">
-        #visitsedona
+        <span>#visitsedona</span>
       </div>
       <div class="footer-socials">
-        <a class="social-btn social-btn-vk" href="#">Вконтакте</a>
+        <a class="social-btn social-btn-tw" href="#">Вконтакте</a>
         <a class="social-btn social-btn-fb" href="#">Фейсбук</a>
         <a class="social-btn social-btn-inst" href="#">Инстаграм</a>
       </div>
       <div class="footer-copyright">
-        Website by
+        <span>Website by</span>
         <a href="#">
           <img src="assets/images/by-htmlacademy.png" alt="htmlacademy.ru">
         </a>
