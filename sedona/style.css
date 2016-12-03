@@ -84,8 +84,17 @@ body {
   display: block;
   padding: 20px 0;
   color: #000;
+  background-color: #fff;
   font-weight: bold;
   text-decoration: none;
+}
+
+.main-header .main-navigation ul li a:hover {
+  color: #81b3d2;
+}
+
+.main-header .main-navigation ul li a:active {
+  color: #cacaca;
 }
 
 .main-header .header-logo {
@@ -99,9 +108,6 @@ main {
 }
 
 main .promo-intro {
-  min-height: 724px;
-  /* абзац выпадает */
-  border-bottom: 1px solid transparent;
   padding-bottom: 55px;
   text-align: center;
   background-color: #fff;
@@ -142,9 +148,9 @@ main .promo-list .promo-item {
 
 main .promo-list .promo-main-feature,
 main .promo-list .promo-feature {
+  min-height: 176px;
   padding-top: 40px;
   padding-bottom: 40px;
-  min-height: 176px;
 }
 
 main .promo-list .promo-feature {
@@ -152,24 +158,66 @@ main .promo-list .promo-feature {
   color: #000;
 }
 
+main .promo-list .promo-main-feature {
+  position: relative;
+  width: calc(100%/3 - 70px);
+  padding-right: calc(100%*2/3 + 35px);
+  padding-left: 35px;
+  background-color: #81b3d2;
+  color: #fff;
+}
+
+main .promo-list .promo-item.promo-main-feature ~ .promo-item.promo-main-feature {
+  padding-right: 35px;
+  padding-left: calc(100%*2/3 + 35px);
+}
+
+main .promo-list .promo-item.promo-main-feature::after {
+  content: "";
+  position: absolute;
+  left: calc(100%/3);
+  top: 0;
+  width: calc(100%*2/3);
+  height: 100%;
+  background: #81b3d2 url("assets/images/small-city-sedona.png") no-repeat;
+  background-size: cover;
+}
+
+main .promo-list .promo-item.promo-main-feature ~ .promo-item.promo-main-feature::after {
+  left: auto;
+  right: calc(100%/3);
+  top: 0;
+  background-image: url("assets/images/devil-bridge.png");
+  background-size: cover;
+}
+
+main .promo-list .promo-main-feature h2,
+main .promo-list .promo-feature h2 {
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+main .promo-list .feature-number {
+  display: block;
+  margin-bottom: 25px;
+}
+
 main .promo-list .promo-recomendation {
   position: relative;
+  min-height: 100px;
   padding-top: 160px;
   padding-bottom: 65px;
   background-color: #fff;
   color: #000;
-  min-height: 100px;
 }
 
 main .promo-list .promo-recomendation::before{
   content: "";
   position: absolute;
   top: 55px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
+  left: 50%;
   height: 76px;
+  transform: translateX(-50%);
 }
 
 main .promo-list .promo-recomendation-rent::before{
@@ -190,72 +238,8 @@ main .promo-list .promo-recomendation-souv::before{
   background-position: -149px 0;
 }
 
-
-main .promo-list .promo-recomendation b{
+main .promo-list .promo-recomendation b {
   font-size: 21px;
-  margin-bottom: 25px;
-}
-/*
-main .promo-list .promo-main-feature {
-  width: calc(100%/3 - 70px);
-  padding-right: calc(100%*2/3 + 35px);
-  padding-left: 35px;
-  background: #81b3d2 url("assets/images/small-city-sedona.png") no-repeat;
-  background-size: calc(100%*2/3) auto;
-  background-position: right;
-  color: #fff;
-}
-
-main .promo-list .promo-item.promo-main-feature ~ .promo-item.promo-main-feature {
-  padding-right: 35px;
-  padding-left: calc(100%*2/3 + 35px);
-  background-image: url("assets/images/devil-bridge.png");
-  background-size: calc(100%*2/3) auto;
-  background-position: left;
-}
-*/
-
-main .promo-list .promo-main-feature {
-  position: relative;
-  width: calc(100%/3 - 70px);
-  padding-right: calc(100%*2/3 + 35px);
-  padding-left: 35px;
-  background-color: #81b3d2;
-  color: #fff;
-}
-
-main .promo-list .promo-item.promo-main-feature::after {
-  content: "";
-  position: absolute;
-  left: calc(100%/3);
-  top: 0;
-  width: calc(100%*2/3);
-  height: 100%;
-  background: #81b3d2 url("assets/images/small-city-sedona.png") no-repeat;
-  background-size: cover;
-}
-
-main .promo-list .promo-item.promo-main-feature ~ .promo-item.promo-main-feature {
-  padding-right: 35px;
-  padding-left: calc(100%*2/3 + 35px);
-}
-
-main .promo-list .promo-item.promo-main-feature ~ .promo-item.promo-main-feature::after {
-  left: auto;
-  right: calc(100%/3);
-  top: 0;
-  background-image: url("assets/images/devil-bridge.png");
-  background-size: cover;
-}
-
-main .promo-list .promo-main-feature h2,
-main .promo-list .promo-feature h2 {
-  margin: 0;
-  margin-bottom: 25px;
-}
-
-main .promo-list .feature-number {
-  display: block;
   margin-bottom: 25px;
 }
 
@@ -278,38 +262,30 @@ main .search-preambul p {
 
 main .search-preambul .main-search-btn {
   display: block;
-  width: 368px;
+  width: 508px;
   margin: 0 auto;
-  padding: 30px 100px;
+  padding: 30px 30px;
   background-color: #766357;
   color: white;
   font-size: 21px;
   font-weight: bold;
+  text-align: center;
   text-decoration: none;
 }
 
-main .search-container {
-}
-
-main .search-container .search-preambul{
-  /* заголовок выпадает */
-  border-top: 1px solid transparent;
-}
-
-main .search-container .search-map {
+main .search-map {
   height: 595px;
-  background-color: #fff;
   background-image: url("assets/images/search-map.png");
   background-size: 100% auto;
 }
 
-main .search-container .search-form {
+main .search-form {
   width: 458px;
-  /*min-height: 285px;*/
   margin: 0 auto;
   padding: 55px;
   font-weight: bold;
   background-color: #fff;
+  color: #000;
 }
 
 main .search-form .date-input-container {
@@ -356,10 +332,10 @@ main .search-form .date-input-container label::after {
   content: "\e800";
   position: absolute;
   right: 9px;
-  font-family: "symbols-sedona";
-  font-size: 21px;
   top: 0;
   line-height: 38px;
+  font-family: "symbols-sedona";
+  font-size: 21px;
   opacity: 0.2;
 }
 
@@ -368,8 +344,8 @@ main .search-form .date-input-container label:hover::after {
 }
 
 main .search-form .date-input-container label:active::after {
-  opacity: 1;
   color: #669ec0;
+  opacity: 1;
 }
 
 main .count-input-container {
@@ -449,14 +425,15 @@ main .search-form .submit-btn:hover {
   padding: 36px 0;
   background-color: rgba(255, 255, 255, 0.9);
   color: #000;
-  vertical-align: middle;
 }
 
 .main-footer .footer-tags,
 .main-footer .footer-socials,
 .main-footer .footer-copyright {
   display: inline-block;
+  vertical-align: middle;
   width: calc(100%/3);
+  text-align: center;
 }
 
 .main-footer .footer-socials,
@@ -467,15 +444,12 @@ main .search-form .submit-btn:hover {
 .main-footer .footer-tags {
   font-size: 21px;
   font-weight: bold;
-  text-align: center;
 }
 
 .main-footer .footer-tags span {
-  vertical-align: middle;
 }
 
 .main-footer .footer-socials {
-  text-align: center;
 }
 
 .main-footer .footer-socials .social-btn {
@@ -484,8 +458,8 @@ main .search-form .submit-btn:hover {
   display: inline-block;
   width: 48px;
   height: 48px;
-  vertical-align: middle;
   background-color: #81b3d2;
+  /*TODO: hide text correctly*/
   font-size: 0;
 }
 
@@ -520,7 +494,6 @@ main .search-form .submit-btn:hover {
 .main-footer .footer-copyright {
   width: calc(100%/3 - 30px);
   padding-right: 30px;
-  vertical-align: middle;
   text-align: right;
 }
 

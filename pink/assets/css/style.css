@@ -1,0 +1,430 @@
+body {
+  min-width: 320px;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+.main-header,
+.download,
+.capabilities .capabilities-list,
+.research,
+.comments,
+.offers,
+.communications .communications-list,
+.main-footer {
+  padding: 0 20px;
+}
+
+.main-header {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.3);
+  color: #fff;
+}
+
+.main-header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.main-header .main-nav .nav-control-icon {
+  width: 50px;
+  height: 24px;
+  float: right;
+  background: url("../images/hamburger.png") no-repeat;
+  background-position: center;
+  cursor: pointer;
+  margin: 21px 0;
+}
+
+.main-header .main-nav ul {
+  display: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 65px;
+  left: 0;
+  width: 100%;
+  list-style: none;
+  text-align: center;
+}
+
+.main-header .main-nav ul li a{
+  display: block;
+  padding: 20px 0;
+  background-color: #283645;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+  border-top: 1px solid #485461;
+  border-bottom: 1px solid #000;
+}
+
+.main-header .main-logo {
+  float: left;
+  width: 75px;
+  height: 22px;
+  margin: 20px 0;
+  background: url("../images/logo-mobile.png") no-repeat center;
+}
+
+.download {
+  padding-top: 485px;
+  padding-bottom: 30px;
+  text-align: center;
+  background-color: #1d2631;
+  color: #fff;
+}
+
+.download::after {
+  content: "";
+  height: 460px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: url("../images/hand-mobile.png") no-repeat bottom, url("../images/back-mobile.jpg") no-repeat top;
+  background-color: #1d2631;
+  background-size: auto, cover;
+}
+
+.download h2 {
+  display: none;
+}
+
+.download .download-btn {
+  display: block;
+  padding: 15px 0;
+  margin-bottom: 30px;
+  border: 3px solid #fff;
+  border-radius: 50px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+
+.download .platforms-list {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+  list-style: none;
+  font-size: 0;
+}
+
+.download .platforms-list .icon {
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  margin: 0 10px;
+  background: url("../images/platforms-sprite.png") no-repeat center;
+}
+
+.download .platforms-list .icon-ios {
+  background-position: 0 0;
+}
+
+.download .platforms-list .icon-android {
+  background-position: -80px 0;
+}
+
+.download .platforms-list .icon-windows {
+  background-position: -160px 0;
+}
+
+.download p {
+  padding: 0 20px;
+}
+
+.capabilities {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.capabilities h2 {
+  margin: 0;
+  margin-bottom: 35px;
+  padding: 0 20px;
+  font-weight: lighter;
+  font-size: 24px;
+}
+
+.capabilities h2+h2 {
+  margin-top: 35px;
+}
+
+.capabilities .capabilities-list {
+  position: relative;
+  margin: 0;
+  margin-top: 50px;
+  padding-top: 40px;
+  list-style: none;
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+.capabilities .capabilities-list::before {
+  content: "";
+  position: absolute;
+  top: -35px;
+  left: 0;
+  height: 0;
+	border-left: 700px solid transparent;
+	border-bottom: 35px solid #f2f2f2;
+}
+
+.capabilities .capabilities-list li:not(:first-child) {
+  margin-top: 30px;
+}
+
+.capabilities .capabilities-list b {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.capabilities .capabilities-list p {
+  color: #283645;
+}
+
+.capabilities .capabilities-list li:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.capabilities .capabilities-list li:last-child .capability-picture {
+  height: 280px;
+  margin-top: 45px;
+  background: url("../images/iphone-mobile.png") no-repeat center;
+  order: 2;
+}
+
+.research {
+  display: none;
+}
+
+.comments {
+  position: relative;
+  padding-top: 45px;
+  padding-bottom: 40px;
+}
+
+.comments::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    height: 0;
+  	border-left: 700px solid transparent;
+  	border-bottom: 35px solid #f2f2f2;
+}
+
+.comments .comments-list {
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.comments .comments-list li {
+  display: none;
+}
+
+.comments .comments-list .current-comment {
+  display: block;
+}
+
+.comments .comments-list li article {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.comments .comments-list article .author-name {
+  display: block;
+  margin-bottom: 25px;
+  font-size: 18px
+}
+
+.comments .comments-list article p {
+  margin: 0;
+  line-height: 30px;
+}
+
+.comments .comments-list article .author-description {
+  display: none;
+}
+
+.comments .comments-nav .comments-nav-direction {
+  display: none;
+}
+
+.dot-list {
+  display: flex;
+  justify-content: center;
+  margin: 6px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dot-list li {
+  margin: 0 10px;
+  width: 6px;
+  height: 6px;
+  background-color: #bec2c7;
+  border-radius: 50%;
+}
+
+.dot-list li.current {
+  box-shadow: 0 0 0 2pt #283645;
+}
+
+.offers {
+  overflow: hidden;
+  padding-top: 35px;
+  padding-bottom: 45px;
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+.offers-table {
+  display: table;
+  width: calc(100%*3);
+  margin-bottom: 30px;
+  /* change multiplier to 0, 1, 2 to go through columns */
+  transform: translateX(calc(-100%/3 * 1));
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.offers-table ul {
+  display: table-row;
+  height: 45px;
+}
+
+.offers-table li {
+  display: table-cell;
+  padding: 15px 23px;
+  width: 280px;
+  border: 2px solid #e5e5e5;
+  vertical-align: middle;
+}
+
+.offers-table header {
+  display: table-header-group;
+  background-color: #283645;
+  color: #fff;
+}
+
+.offers-table header li {
+  padding: 15px 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.offers-table header b {
+  margin-bottom: 5px;
+}
+
+.offers-table .recommended-offer {
+  position: relative;
+  overflow: hidden;
+}
+
+.offers-table .recommended-offer::after {
+  content: "хит";
+  width: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 7px 0;
+  transform: translate(-30px, 5px) rotate(-45deg);
+  text-transform: uppercase;
+  background-color: #d22856;
+  color: #fff;
+}
+
+.offers-table ul li:first-of-type {
+  display: none;
+}
+
+.offers-table .offer-name {
+  display: block;
+  font-size: 16px;
+}
+
+.offers-table .offer-cost {
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+.offers-table .category-name {
+  float: left;
+  line-height: 31px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.offers-table .icon {
+  float: right;
+  width: 31px;
+  height: 31px;
+  background: url("../images/yes.png") no-repeat center;
+}
+
+.offers-table .icon-no {
+  background: url("../images/no.png") no-repeat center;
+}
+
+.communications {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.communications h2 {
+  margin: 0;
+  margin-bottom: 35px;
+  padding: 0 20px;
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+.communications .communications-list {
+  margin: 0;
+  margin-bottom: 40px;
+  list-style: none;
+}
+
+.communications .communications-list li:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.communications .communications-list b {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.communications .communications-list p {
+  margin: 0;
+  font-size: 24px;
+  color: #d22856;
+}
+
+.communications .communication-map {
+  height: 200px;
+  background: url("../images/map-mobile-frame.png"), url("../images/map-mobile.jpg") no-repeat center;
+  background-size: 100% auto, cover;
+}
+
+.main-footer {
+  display: none;
+}
