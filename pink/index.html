@@ -4,26 +4,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic" rel="stylesheet">
   </head>
   <body>
     <header class="main-header">
       <a class="main-logo" href="#"></a>
-      <nav class="main-nav">
+      <nav class="main-nav main-nav--closed">
         <ul>
-          <li><a href="#">Главная</a></li>
+          <li class="active"><a>Главная</a></li>
           <li><a href="#">Фотографии</a></li>
           <li><a href="#">Конкурс</a></li>
           <li><a href="#">HTML Academy</a></li>
         </ul>
-        <div class="nav-control-icon"></div>
+        <div class="nav-control-toggle"></div>
       </nav>
     </header>
     <main>
       <section class="download">
         <div class="download-background"></div>
         <h2>Взгляните<br> на жизнь<br> иначе!</h2>
-        <a class="download-btn">Скачать приложение</a>
+        <a class="download-btn" href="#">Скачать приложение</a>
         <ul class="platforms-list">
           <li class="icon icon-ios"></li>
           <li class="icon icon-android"></li>
@@ -61,7 +61,7 @@
         <ul class="comments-list">
           <li class="current-comment">
             <article>
-              <p>"Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!"</p>
+              <p>Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!</p>
               <b class="author-name">Николай петров</b>
               <span class="author-description">25 лет, водитель трамвая<span>
             </article>
@@ -70,12 +70,12 @@
           <li></li>
         </ul>
         <nav class="comments-nav">
-          <ul class="dot-list comments-nav-list">
-            <li class="current"></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <div class="comments-nav-direction">
+          <div class="dot-list">
+            <label class="current"><input type="radio" name="comments-nav"></label>
+            <label><input type="radio" name="comments-nav"></label>
+            <label><input type="radio" name="comments-nav"></label>
+          </div>
+          <div class="comments-nav-directions">
             <button class="comments-nav-btn comments-nav-btn-prev">предыдущий</button>
             <button class="comments-nav-btn comments-nav-btn-next">следующий</button>
           </div>
@@ -149,11 +149,11 @@
           </article>
         </div>
         <nav class="offers-nav">
-          <ul class="dot-list offers-nav-list">
-            <li></li>
-            <li class="current"></li>
-            <li></li>
-          </ul>
+          <div class="dot-list">
+            <label class="current"><input type="radio" name="comments-nav"></label>
+            <label><input type="radio" name="comments-nav"></label>
+            <label><input type="radio" name="comments-nav"></label>
+          </div>
         </nav>
       </section>
       <section class="communications">
