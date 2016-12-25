@@ -4,12 +4,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic" rel="stylesheet">-->
   </head>
   <body>
     <header class="main-header">
       <a class="main-logo" href="#">
-        <img src="assets/images/logo-mobile.png" width="75px" height="22px">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="assets/images/logo-pink-white-desktop.svg">
+          <source media="(min-width: 700px)" srcset="assets/images/logo-pink-white-tablet.svg">
+          <img src="assets/images/logo-pink-white-mobile.svg" width="75px" height="22px">
+        </picture>
       </a>
       <nav class="main-nav main-nav--opened" id="main-nav">
         <ul>
@@ -23,7 +27,6 @@
     </header>
     <main>
       <section class="download">
-        <div class="download-background"></div>
         <h2>Взгляните<br> на жизнь<br> иначе!</h2>
         <a class="download-btn" href="#">Скачать приложение</a>
         <ul class="platforms-list">
@@ -90,7 +93,7 @@
                   <b class="offer-name">База</b>
                   <span class="offer-cost">1,99 USD</span>
                 </th>
-                <th class="recommended-offer">
+                <th class="recommended-offer active">
                   <b class="offer-name">Стандарт</b>
                   <span class="offer-cost">3,99 USD</span>
                 </th>
@@ -102,39 +105,21 @@
             </thead>
             <tr>
               <td>Розовый фильтр</td>
-              <td class="icon icon-yes">
-                <span class="category-name">Розовый фильтр</span>
-              </td>
-              <td class="icon icon-yes">
-                <span class="category-name">Розовый фильтр</span>
-              </td>
-              <td class="icon icon-yes">
-                <span class="category-name">Розовый фильтр</span>
-              </td>
+              <td class="icon icon-yes">да</td>
+              <td class="icon icon-yes active">да</td>
+              <td class="icon icon-yes">да</td>
             </tr>
             <tr>
               <td>Смайлики</td>
-              <td class="icon icon-no">
-                <span class="category-name">Смайлики</span>
-              </td>
-              <td class="icon icon-yes">
-                <span class="category-name">Смайлики</span>
-              </td>
-              <td class="icon icon-yes">
-                <span class="category-name">Смайлики</span>
-              </td>
+              <td class="icon icon-no">нет</td>
+              <td class="icon icon-yes active">да</td>
+              <td class="icon icon-yes">да</td>
             </tr>
             <tr>
               <td>Комментарии</td>
-              <td class="icon icon-no">
-                <span class="category-name">Комментарии</span>
-              </td>
-              <td class="icon icon-no">
-                <span class="category-name">Комментарии</span>
-              </td>
-              <td class="icon icon-yes">
-                <span class="category-name">Комментарии</span>
-              </td>
+              <td class="icon icon-no">нет</td>
+              <td class="icon icon-no active">нет</td>
+              <td class="icon icon-yes">да</td>
             </tr>
           </table>
         </div>
@@ -168,7 +153,10 @@
     <footer class="main-footer">
       <section class="footer-logo">
         <a href="#">
-          <img src="assets/images/logo-red-tab.png">
+          <picture>
+            <source media="(min-width: 1200px)" srcset="assets/images/logo-pink-blue-desktop.svg">
+            <img src="assets/images/logo-pink-blue-tablet.svg" width="147px" height="40px">
+          </picture>
         </a>
       </section>
       <section class="footer-socials">
