@@ -1088,13 +1088,6 @@ body {
   color: #fff;
 }
 
-/*
-.offers-table tr td:first-of-type,
-.offers-table tr th:first-of-type {
-  display: none;
-}
-*/
-
 .offers-table .offer-name {
   display: block;
   font-size: 16px;

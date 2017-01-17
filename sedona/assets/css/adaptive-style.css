@@ -1,9 +1,29 @@
+@font-face {
+  font-family: 'ptSans';
+  src:  url('../fonts/ptsans.woff2') format('woff2'),
+        url('../fonts/ptsans.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ptSans';
+  src:  url('../fonts/ptsansbold.woff2') format('woff2'),
+        url('../fonts/ptsansbold.woff') format('woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'symbols-sedona';
+  src:  url('../fonts/symbols-sedona.woff2') format('woff2'),
+        url('../fonts/symbols-sedona.woff') format('woff');
+}
+
 body {
   margin: 0 auto;
   padding: 0;
   text-transform: uppercase;
   background-color: #f2f2f2;
   font-size: 14px;
+  font-family: 'ptSans', sans-serif;
   line-height: 24px;
 }
 
@@ -20,7 +40,7 @@ main,
   background-color: #fff;
   color: #000;
   font-size: 18px;
-  line-height: 40px;
+  line-height: 24px;
 }
 
 .main-header .header-logo {
@@ -29,6 +49,10 @@ main,
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.main-header .header-logo img {
+  display: block;
 }
 
 .main-nav .nav-panel {
@@ -55,9 +79,8 @@ main::before {
   position: relative;
   display: block;
   height: 160px;
-  background-image: url();
-  /* TODO: remove attribute */
-  background: url("../images/devil-bridge.png");
+  background: url("../images/back-mobile.jpg");
+  background-size: 100%;
   margin-bottom: 40px;
 }
 
@@ -94,7 +117,8 @@ main::before {
 
 .photos-list .photo-container {
   padding: 20px 20px;
-  font-size:
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .photo-container img {
@@ -138,7 +162,9 @@ main::before {
   width: 23px;
   height: 23px;
   margin-right: 12px;
-  background-color: red;
+  background: url("../images/like-icon-dark.png") center;
+  background-size: cover;
+  cursor: pointer;
 }
 
 .video-section>header {
@@ -175,20 +201,25 @@ main::before {
 .player-btn {
   width: 40px;
   height: 40px;
-  background-color: red;
   border: none;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
   cursor: pointer;
 }
 
 .player-btn-tostart {
+  background-image: url("../images/replay-dark.png");
   margin-left: 15px;
 }
 
 .player-btn-subtitles {
+  background-image: url("../images/subtitles-dark.png");
   margin-right: 15px;
 }
 
 .player-btn-fullscreen {
+  background-image: url("../images/fullscreen-dark.png");
   margin-right: 15px;
 }
 
@@ -253,23 +284,26 @@ main::before {
   height: 48px;
   margin: 0 3px;
   background-color: #81b3d2;
+  background-position: center;
+  background-repeat: no-repeat;
   /*TODO: hide text correctly*/
   font-size: 0;
 }
 
-/*
 .social-btn:hover {
   background-color: #669ec0;
 }
-*/
 
 .social-btn-tw {
+  background-image: url("../images/icon-twitter.png");
 }
 
 .social-btn-fb {
+  background-image: url("../images/icon-facebook.png");
 }
 
-.social-btn-inst {
+.social-btn-yt {
+  background-image: url("../images/icon-youtube.png");
 }
 
 .main-footer .footer-copyright {
@@ -290,7 +324,7 @@ main::before {
 
   .main-header .main-nav--opened~.header-logo {
     top: auto;
-    bottom: -30px;
+    bottom: -28px;
   }
 
   .main-nav .nav-panel {
@@ -320,24 +354,6 @@ main::before {
   .main-nav.main-nav--opened {
     padding-bottom: 55px;
   }
-
-/*
-  .main-nav.main-nav--opened ul::before {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #283645;
-  }
-
-  .main-nav.main-nav--opened ul li {
-    position: relative;
-    z-index: 2;
-  }
-*/
 
   .nav-control-toggle {
     position: absolute;
@@ -387,32 +403,17 @@ main::before {
     transform: rotate(45deg);
   }
 
-  /*
-  .main-nav+.nav-control-toggle:hover::before,
-  .main-nav+.nav-control-toggle:hover::after {
-    background-color: #d22856;
-  }
-
-  .main-nav+.nav-control-toggle:active::before,
-  .main-nav+.nav-control-toggle:active::after {
-    background-color: #6f3650;
-  }
-
-  .main-nav.main-nav--closed+.nav-control-toggle:hover::after {
-    box-shadow: 0 10px 0 0 #d22856, 0 -10px 0 0 #d22856;
-  }
-
-  .main-nav.main-nav--closed+.nav-control-toggle:active::after {
-    box-shadow: 0 10px 0 0 #6f3650, 0 -10px 0 0 #6f3650;
-  }
-  */
-
   .photos-list li {
     border-top: 1px solid #e5e5e5;
   }
 
   .photos-list li:last-child {
     border-bottom: 1px solid #e5e5e5;
+  }
+
+  .video-player .player-controls {
+    padding: 12px 0;
+    margin: 0 20px;
   }
 
   .time-control {
@@ -433,6 +434,26 @@ main::before {
   .main-header {
     font-size: 14px;
     line-height: 26px;
+  }
+
+  .main-nav .nav-panel a:hover {
+    color: #81b3d2;
+  }
+
+  .main-nav .nav-panel a:active {
+    color: #cacaca;
+  }
+
+  .main-nav .nav-panel .active {
+    color: #766357;
+  }
+
+  .main-nav .nav-panel .active a:hover {
+    color: #604e43;
+  }
+
+  .main-nav .nav-panel .active a:active {
+    color: #dbd8d5;
   }
 
   .nav-control-toggle {
@@ -474,6 +495,8 @@ main::before {
   main::before {
     height: 290px;
     margin-bottom: 65px;
+    background: url("../images/back-tablet.jpg");
+    background-size: 100%;
   }
 
   .photos-section {
@@ -510,7 +533,7 @@ main::before {
     flex-basis: 768px;
   }
 
-  .photos-list li:last-child {
+  .photos-list li:last-child:not(:nth-child(2n+1)) {
     margin-right: 50%;
   }
 
@@ -585,6 +608,19 @@ main::before {
     background: none;
   }
 
+  .player-btn-tostart {
+    background-image: url("../images/replay-light.png");
+  }
+
+  .player-btn-subtitles {
+    background-image: url("../images/subtitles-light.png");
+  }
+
+  .player-btn-fullscreen {
+    background-image: url("../images/fullscreen-light.png");
+  }
+
+
   .main-footer {
     flex-flow: row;
     justify-content: space-between;
@@ -617,6 +653,8 @@ main::before {
   main::before {
     height: 300px;
     margin-bottom: 100px;
+    background: url("../images/back-desktop.jpg");
+    background-size: 100%;
   }
 
   .photos-section {
@@ -651,6 +689,11 @@ main::before {
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.3);
     color: #fff;
+  }
+
+  .photo-about .likes::before {
+    background: url("../images/like-icon-light.png") center;
+    background-size: cover;
   }
 
   .video-player {
