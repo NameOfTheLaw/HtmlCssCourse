@@ -1,20 +1,20 @@
 @font-face {
   font-family: 'ptSans';
-  src:  url('assets/fonts/ptsans.woff2') format('woff2'),
-        url('assets/fonts/ptsans.woff') format('woff');
+  src:  url('../fonts/ptsans.woff2') format('woff2'),
+        url('../fonts/ptsans.woff') format('woff');
 }
 
 @font-face {
   font-family: 'ptSans';
-  src:  url('assets/fonts/ptsansbold.woff2') format('woff2'),
-        url('assets/fonts/ptsansbold.woff') format('woff');
+  src:  url('../fonts/ptsansbold.woff2') format('woff2'),
+        url('../fonts/ptsansbold.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'symbols-sedona';
-  src:  url('assets/fonts/symbols-sedona.woff2') format('woff2'),
-        url('assets/fonts/symbols-sedona.woff') format('woff');
+  src:  url('../fonts/symbols-sedona.woff2') format('woff2'),
+        url('../fonts/symbols-sedona.woff') format('woff');
 }
 
 body {
@@ -48,39 +48,39 @@ body {
   position: relative;
 }
 
-.main-header .main-navigation {
+.main-header .main-nav {
 }
 
-.main-header .main-navigation ul {
+.main-header .main-nav ul {
   position: relative;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.main-header .main-navigation ul li {
+.main-header .main-nav ul li {
   float: left;
   width: 20%;
 }
 
-.main-header .main-navigation ul li:nth-child(1) {
+.main-header .main-nav ul li:nth-child(1) {
   margin-left: 6%;
   text-align: left;
 }
-.main-header .main-navigation ul li:nth-child(2) {
+.main-header .main-nav ul li:nth-child(2) {
   text-align: left;
 }
-.main-header .main-navigation ul li:nth-child(3) {
+.main-header .main-nav ul li:nth-child(3) {
   margin-left: 8%;
   text-align: right;
 }
-.main-header .main-navigation ul li:nth-child(4) {
+.main-header .main-nav ul li:nth-child(4) {
   float: right;
   margin-right: 6%;
   text-align: right;
 }
 
-.main-header .main-navigation ul li a {
+.main-header .main-nav ul li a {
   display: block;
   padding: 20px 0;
   color: #000;
@@ -89,11 +89,11 @@ body {
   text-decoration: none;
 }
 
-.main-header .main-navigation ul li a:hover {
+.main-header .main-nav ul li a:hover {
   color: #81b3d2;
 }
 
-.main-header .main-navigation ul li a:active {
+.main-header .main-nav ul li a:active {
   color: #cacaca;
 }
 
@@ -117,9 +117,9 @@ main .promo-intro {
 main .promo-intro .promo-img {
   height: 512px;
   margin-bottom: 60px;
-  background: url("assets/images/promo-text.png") center top no-repeat,
-    url("assets/images/promo-bottom-mask.png") center top no-repeat,
-    url("assets/images/promo-mountains.png") center bottom no-repeat;
+  background: url("../images/promo-text.png") center top no-repeat,
+    url("../images/promo-bottom-mask.png") center top no-repeat,
+    url("../images/promo-mountains.png") center bottom no-repeat;
   background-size: auto 512px, 100% 512px, cover;
 }
 
@@ -179,7 +179,7 @@ main .promo-list .promo-item.promo-main-feature::after {
   top: 0;
   width: calc(100%*2/3);
   height: 100%;
-  background: #81b3d2 url("assets/images/small-city-sedona.png") no-repeat;
+  background: #81b3d2 url("../images/small-city-sedona.png") no-repeat;
   background-size: cover;
 }
 
@@ -187,7 +187,7 @@ main .promo-list .promo-item.promo-main-feature ~ .promo-item.promo-main-feature
   left: auto;
   right: calc(100%/3);
   top: 0;
-  background-image: url("assets/images/devil-bridge.png");
+  background-image: url("../images/devil-bridge.png");
   background-size: cover;
 }
 
@@ -222,19 +222,19 @@ main .promo-list .promo-recomendation::before{
 
 main .promo-list .promo-recomendation-rent::before{
   width: 75px;
-  background: url("assets/images/recomendations.png");
+  background: url("../images/recomendations.png");
   background-position: 0 0;
 }
 
 main .promo-list .promo-recomendation-food::before{
   width: 74px;
-  background: url("assets/images/recomendations.png");
+  background: url("../images/recomendations.png");
   background-position: -75px 0;
 }
 
 main .promo-list .promo-recomendation-souv::before{
   width: 64px;
-  background: url("assets/images/recomendations.png");
+  background: url("../images/recomendations.png");
   background-position: -149px 0;
 }
 
@@ -275,7 +275,7 @@ main .search-preambul .main-search-btn {
 
 main .search-map {
   height: 595px;
-  background-image: url("assets/images/search-map.png");
+  background-image: url("../images/search-map.png");
   background-size: 100% auto;
 }
 
@@ -502,24 +502,3 @@ main .search-form .submit-btn:hover {
   display: inline-block;
   vertical-align: middle;
 }
-
-/* границы для сеток */
-/*
-.container {
-  border: 1px solid red;
-}
-
-.promo-intro,
-.promo-list,
-.search-container {
-  border: 1px solid gold;
-}
-
-.promo-list li,
-.search-preambul,
-.search-form,
-.main-footer .container > div {
-  border: 1px solid green;
-  margin-left: -2px;
-}
-*/
